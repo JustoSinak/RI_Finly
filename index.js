@@ -1,10 +1,16 @@
+// Data base name: finlyDB, Password: @Twopiece.23 or @twopiece.23@
+
+
 const express = require('express');
 const morgan = require('morgan');
 const app = express();
 app.use(morgan('dev'));
 app.use(express.static('public'));
 
-app.set('views', './views');
+const path = require('path');
+app.set('views', path.join(__dirname, 'views'));
+
+// app.set('views', './views');
 app.set('view engine', 'ejs');
 
 app.get('/', (req, res) => {
