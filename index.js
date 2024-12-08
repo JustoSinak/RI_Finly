@@ -3,6 +3,10 @@
 
 const express = require('express');
 const morgan = require('morgan');
+
+// const userRouter = require('./routes/user.route');
+
+
 const app = express();
 app.use(morgan('dev'));
 app.use(express.static('public'));
@@ -26,7 +30,7 @@ app.get('*', (req, res) => {
     res.status(404).render('index', { message: 'Not Found' });
 });
 
-
+// app.use('/users', userRouter);
 
 
 const PORT = 3000;
