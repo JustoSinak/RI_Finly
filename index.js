@@ -5,9 +5,9 @@ const express = require('express');
 const morgan = require('morgan');
 
 
-require('dotenv').config();
-require('./libs/dbConnect'); // Connect to MongoDB
-const userRouter = require('./routes/user.route');
+// require('dotenv').config();
+// require('./libs/dbConnect'); // Connect to MongoDB
+// const userRouter = require('./routes/user.route');
 
 const app = express();
 app.use(morgan('dev'));
@@ -24,16 +24,16 @@ app.get('/', (req, res) => {
 });
 
 
-app.use('/users', userRouter);
+// app.use('/users', userRouter);
 
 
 
-// app.get('/contact', (req, res) => {
-//     res.render('index', { message: 'The Contact Page' });
-// });
-// app.get('/about', (req, res) => {
-//     res.render('index', { message: 'The About Page' });
-// });
+app.get('/contact', (req, res) => {
+    res.render('index', { message: 'The Contact Page' });
+});
+app.get('/about', (req, res) => {
+    res.render('index', { message: 'The About Page' });
+});
 
 
 
